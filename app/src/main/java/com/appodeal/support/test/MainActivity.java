@@ -60,6 +60,11 @@ public class MainActivity extends AppCompatActivity implements com.appodeal.supp
             mPresenter.onStartTimer();
         }
     }
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("check", isCheckDisable);
+    }
 
     @Override
     public void onDisableClick() {
