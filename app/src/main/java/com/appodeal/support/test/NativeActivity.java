@@ -31,7 +31,7 @@ public class NativeActivity extends AppCompatActivity {
         nativeCallBacks();
         adapter = new Adapter( Appodeal.getNativeAds(5));
         mRecyclerView.setAdapter(adapter);
-        mProgressBar = findViewById(R.id.progress_id);
+
     }
 
     private void nativeCallBacks(){

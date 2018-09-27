@@ -15,13 +15,16 @@ public class MainActivity extends AppCompatActivity implements com.appodeal.supp
     private Button mButtonDisable, mButtonNative;
     private TextView mTextViewCount;
     private Presenter mPresenter;
-    private boolean isCheck = false;
+    private boolean isCheckDisable = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        if (savedInstanceState != null) {
+            isCheckDisable = savedInstanceState.getBoolean("check");
+        }
         mButtonDisable = findViewById(R.id.disable_button);
         mTextViewCount = findViewById(R.id.count_timer);
         mButtonNative = findViewById(R.id.native_id);
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements com.appodeal.supp
         mButtonDisable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               mPresenter.clickDisable();
+                mPresenter.clickDisable();
             }
         });
 
@@ -53,21 +56,21 @@ public class MainActivity extends AppCompatActivity implements com.appodeal.supp
     @Override
     protected void onStart() {
         super.onStart();
-        if(isCheck){
+        if (!isCheckDisable) {
             mPresenter.onStartTimer();
-            isCheck = false;
         }
     }
 
     @Override
     public void onDisableClick() {
+        isCheckDisable = true;
         mPresenter.onCancelTimer();
     }
 
     @Override
     public void onClickNative() {
         mPresenter.onCancelTimer();
-        isCheck = true;
+
         Intent intent = new Intent(MainActivity.this, NativeActivity.class);
         startActivity(intent);
     }

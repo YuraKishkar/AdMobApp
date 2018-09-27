@@ -1,15 +1,10 @@
 package com.appodeal.support.test;
 
-import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.*;
-import android.view.View;
-import android.widget.ProgressBar;
 
-import com.appodeal.ads.Appodeal;
 import com.appodeal.ads.NativeAd;
 import com.appodeal.ads.native_ad.views.NativeAdViewAppWall;
-import com.appodeal.ads.native_ad.views.NativeAdViewContentStream;
 
 import java.util.List;
 
@@ -34,10 +29,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
-        viewHolder.mNativeAdViewContentStream.setNativeAd(list.get(i));
-        if (getItemCount()!= 0) {
-            viewHolder.mProgressBar.setVisibility(View.GONE);
-        }
+        viewHolder.mNativeAdViewAppWall.setNativeAd(list.get(i));
+
 
 
     }
@@ -59,13 +52,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 }
 
 public class ViewHolder extends RecyclerView.ViewHolder {
-    private NativeAdViewAppWall mNativeAdViewContentStream;
-    private ProgressBar mProgressBar;
+    private NativeAdViewAppWall mNativeAdViewAppWall;
+
 
     public ViewHolder(android.view.View itemView) {
         super(itemView);
-        mNativeAdViewContentStream = itemView.findViewById(R.id.native_ad_view_app_wall);
-        mProgressBar = itemView.findViewById(R.id.progress_id);
+        mNativeAdViewAppWall = itemView.findViewById(R.id.native_ad_view_app_wall);
+
     }
 }
 }
