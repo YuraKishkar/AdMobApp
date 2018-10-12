@@ -1,4 +1,4 @@
-# AppodealTest
+# Appodeal
 The first few thousands of displays of each app occur through ad networks, such as Admob and Adcolony (in case of a video ad). We do this to analyze your traffic and implement the most suitable networks with the right settings, tailored specifically to your needs.
 It might take some time for the network to analyze your traffic, so it might show unstable results. However, there’s nothing to worry about, since it usually takes several thousands of displays of each app for the network to adjust (with good traffic, this process will be unnoticeable). After that, your eCPM will be stabilized.
 First of all, we recommend you to generate all your traffic and watch indicators. You should achieve at least 2-3 thousands of displays of each app daily to be able to evaluate the statistics objectively.
